@@ -17,10 +17,10 @@ fun searchMAS(searchMap: List<String>): Int {
     val filteredValue = listOf("MSSM", "SSMM", "SMMS", "MMSS")
 
     fun checkXMas(x: Int, y: Int): Boolean {
-        val c2 = searchMap[y - 1][x - 1]//↖
-        val c4 = searchMap[y - 1][x + 1]//↗
-        val c1 = searchMap[y + 1][x + 1]//↘
-        val c3 = searchMap[y + 1][x - 1]//↙
+        val c2 = searchMap[y - 1][x - 1]//↖️
+        val c4 = searchMap[y - 1][x + 1]//↗️
+        val c1 = searchMap[y + 1][x + 1]//↘️
+        val c3 = searchMap[y + 1][x - 1]//↙️
         val value = "$c2$c4$c1$c3"
         return value in filteredValue
     }
@@ -60,14 +60,14 @@ fun searchXMAS(searchMap: List<String>): Int {
     val transposed = searchMap.transpose()
     val shiftedTransposedForMainDiagonal = searchMap.shift((size downTo 0).toList()).transpose()
     val shiftedTransposedForAntiDiagonal = searchMap.shift((0..size).toList()).transpose()
-    return searchHorizontal(searchMap, XMAS) + // ➡️
-            searchHorizontal(searchMap, SAMX) + //⬅️
+    return searchHorizontal(searchMap, XMAS) +   //➡️
+            searchHorizontal(searchMap, SAMX) +  //⬅️
             searchHorizontal(transposed, XMAS) + //⬇️
-            searchHorizontal(transposed, SAMX) + //⬇️
+            searchHorizontal(transposed, SAMX) + //⬆️
             searchHorizontal(shiftedTransposedForMainDiagonal, XMAS) + //↘️
             searchHorizontal(shiftedTransposedForMainDiagonal, SAMX) + //↖️
             searchHorizontal(shiftedTransposedForAntiDiagonal, XMAS) + //↙️
-            searchHorizontal(shiftedTransposedForAntiDiagonal, SAMX)//↗️
+            searchHorizontal(shiftedTransposedForAntiDiagonal, SAMX)   //↗️
 
 }
 

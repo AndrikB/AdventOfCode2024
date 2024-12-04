@@ -27,10 +27,8 @@ fun searchMAS(searchMap: List<String>): Int {
 
     for (y in 1 until rows - 1) {
         for (x in 1 until cols - 1) {
-            if (searchMap[y][x] == 'A') {
-                if (checkXMas(x, y)) {
-                    count++
-                }
+            if (searchMap[y][x] == 'A' && checkXMas(x, y)) {
+                count++
             }
         }
     }
